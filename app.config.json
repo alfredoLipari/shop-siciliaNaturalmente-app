@@ -1,0 +1,14 @@
+{
+    "expo": {
+    
+      "plugins": [
+        [
+          "@stripe/stripe-react-native",
+          {
+           
+            "enableGooglePay": true
+          }
+        ]
+      ]
+    }
+  }

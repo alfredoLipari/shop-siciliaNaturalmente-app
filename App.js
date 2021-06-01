@@ -1,21 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import {
+  useFonts,
+  Inter_400Regular,
+  OpenSans_400Regular,
+  Inter_600SemiBold,
+} from '@expo-google-fonts/dev'
+import AppLoading from 'expo-app-loading'
+import { StripeProvider } from '@stripe/stripe-react-native'
+//pass the ref to your navigation container
+
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './store'
+
+import { Provider } from 'react-redux'
+
+import { AppTab } from './Navigation'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  let [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    OpenSans_400Regular,
+    Inter_600SemiBold,
+  })
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
+
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <AppTab />
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
+  )
+}
