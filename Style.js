@@ -25,6 +25,11 @@ export default StyleSheet.create({
     color: '#94a1b2',
     fontSize: 12,
   },
+  boldSubText: {
+    fontFamily: 'Inter_600SemiBold',
+    color: '#094067',
+    fontSize: 12,
+  },
   header_text: {
     color: 'white',
     fontFamily: 'Inter_600SemiBold',
@@ -37,4 +42,14 @@ export default StyleSheet.create({
     backgroundColor: '#ef4565',
     color: 'white',
   },
+  button: {
+    borderRadius: 3,
+    backgroundColor: '#3D6DCC',
+  },
 })
+/* colors  */
+export const colors = {
+  blue: {
+    blue1: '#3D6DCC',
+  },
+}

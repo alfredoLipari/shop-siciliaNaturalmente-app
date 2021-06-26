@@ -10,6 +10,7 @@ import {
   FINISH_REGISTER,
   UPDATE_FAVOURITE,
   UPDATE_PAST_ORDERS,
+  SAVE_PAYMENT_METHOD,
 } from '../actions/types'
 import AsyncStorage from '@react-native-community/async-storage'
 
@@ -25,6 +26,7 @@ const initialState = {
     email: null,
     favourites: [],
     ordersHistory: [],
+    creditCardInformation: [],
   },
   isSignupSuccessful: false,
 }
@@ -76,6 +78,7 @@ export default (state = initialState, action) => {
           email: null,
           favourites: [],
           ordersHistory: [],
+          creditCardInformation: [],
         },
         isAuthenticated: false,
         isLoading: false,
@@ -93,6 +96,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+      }
+    case SAVE_PAYMENT_METHOD:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          creditCardInformation: state.user.creditCardInformation.push(
+            action.payload,
+          ),
+        },
       }
   }
 

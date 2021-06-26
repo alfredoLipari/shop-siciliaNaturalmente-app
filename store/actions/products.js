@@ -31,14 +31,13 @@ export const fetchProducts = () => {
         )
       }
 
-      console.log(loadedPasta, ' quiii')
-
       dispatch({
         type: SET_PASTA,
         pasta: loadedPasta,
       })
     } catch (err) {
       //send to custom analytics server
+      console.log(err)
       throw err
     }
   }

@@ -2,7 +2,11 @@ import { PASTA } from '../../data/dummy-data'
 import { SET_PASTA, IS_LOADING } from '../actions/types'
 
 const initialState = {
-  availableProducts: [],
+  availableProducts: [
+    {
+      categoria: 'pasta',
+    },
+  ],
 
   isLoading: false,
 }

@@ -12,8 +12,6 @@ import {
 
 import axios from '../../axios'
 import { auth } from './user'
-import {} from 'stripe'
-
 export const addToCart = (product, quantity) => async (dispatch) => {
   console.log(product, ' ma che cazzp ')
   return dispatch({
@@ -52,6 +50,7 @@ export const checkout = (product, user, totalAmount) => async (dispatch) => {
     })
     return false
   }
+
   const { isAuthenticated, isLoading, token, ...dataLogin } = user
   const { email, ...dataUser } = dataLogin
 
@@ -60,11 +59,15 @@ export const checkout = (product, user, totalAmount) => async (dispatch) => {
 
   //do the call at server, passing the user and the product and jwt token
   try {
-    const data = await axios.post('orders/postOrder', product, {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const data = await axios.post(
+      'http://8e4411c312e8.ngrok.io/orders/postOrder',
+      product,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    })
+    )
     const resData = await data.data
 
     dispatch({ type: UPDATE_PAST_ORDERS, payload: resData.ordersHistory })

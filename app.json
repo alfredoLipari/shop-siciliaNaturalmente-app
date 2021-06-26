@@ -10,8 +10,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
- 
-    "description": "Sicilia Naturalmente è l'applicazione per acquistare ",
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          
+          "enableGooglePay": true
+        }
+      ]
+    ],
+    "title":"Sicilia Naturalmente App",
+    "description": "Sicilia Naturalmente è l'applicazione per acquistare tante cose",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -38,4 +47,5 @@
     }
     
   }
+  
 }

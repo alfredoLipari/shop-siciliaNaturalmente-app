@@ -1,3 +1,8 @@
+// * USER SCREEN
+// ? what should it do
+// * If not Logged View the login screen
+// * If logged View all the options
+
 import React from 'react'
 import { SafeAreaView, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import Login from '../components/authComponents/login'

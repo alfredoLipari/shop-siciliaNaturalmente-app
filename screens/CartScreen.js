@@ -1,4 +1,9 @@
-import React, { useState } from 'react'
+// * CART SCREEN
+// ? what can you do
+// * checkout method when user is authenticated
+// * add and delete product from the cart
+
+import React from 'react'
 import {
   View,
   Text,
@@ -11,7 +16,6 @@ import { Header, Button } from 'react-native-elements'
 import { FlatList } from 'react-native-gesture-handler'
 import { AntDesign } from '@expo/vector-icons'
 import * as cartActions from '../store/actions/cart'
-//import * as RootNavigation from '../Navigation'
 import { useSelector, useDispatch } from 'react-redux'
 import { StatusBar } from 'expo-status-bar'
 import CustomModal from '../components/CustomModal'
@@ -121,9 +125,6 @@ const CartScreen = ({ navigation }) => {
                 marginTop: 30,
                 width: '100%',
                 overflow: 'hidden',
-
-                justifyContent: 'flex-end',
-                alignItems: 'flex-end',
               }}
             >
               <Button
@@ -137,7 +138,7 @@ const CartScreen = ({ navigation }) => {
                   fontFamily: 'Inter_400Regular',
                 }}
                 containerStyle={{
-                  width: '70%',
+                  width: '95%',
                   alignSelf: 'center',
                 }}
                 buttonStyle={{

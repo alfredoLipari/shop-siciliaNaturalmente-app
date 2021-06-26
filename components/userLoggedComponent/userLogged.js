@@ -20,6 +20,8 @@ import Heart from '../../assets/heart'
 const win = Dimensions.get('window')
 const ratio = win.width / 541 //541 is actual image width
 
+import UserLoggedOption from './userLoggedOption'
+
 const userLogged = ({ payload }) => {
   const dispatch = useDispatch()
   const navigation = useNavigation()
@@ -36,54 +38,33 @@ const userLogged = ({ payload }) => {
           <Text style={styles.heading}>{payload.user.name}</Text>
         </View>
       </ImageBackground>
+
       <View style={styles.ViewContainer}>
         <Text style={[styles.heading, styles.viewHeading]}>Account</Text>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('HistoryOrders', {
-              email: { email },
-            })
-          }
-          style={{
-            alignSelf: 'center',
-            width: '90%',
 
-            marginVertical: 20,
-          }}
-        >
-          <View
-            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-          >
-            <Fontisto name="shopping-bag-1" size={24} color="#094067" />
-            <Text style={{ fontFamily: 'Inter_400Regular', color: '#094067' }}>
-              ORDINI EFFETTUATI
-            </Text>
-            <AntDesign name="right" size={24} color="#094067" />
-          </View>
-        </Pressable>
-        <Pressable
-          onPress={() =>
-            navigation.navigate('Favourites', {
-              email: { email },
-            })
-          }
-          style={{
-            alignSelf: 'center',
-            width: '90%',
-            marginVertical: 20,
-          }}
-        >
-          <View
-            style={{ justifyContent: 'space-between', flexDirection: 'row' }}
-          >
-            <Heart color="#094067" secondColor="#094067" />
+        <UserLoggedOption
+          title="ORDINI EFFETTUATI"
+          screen="HistoryOrders"
+          icon={<Fontisto name="shopping-bag-1" size={24} color="#094067" />}
+          logout="true"
+          email={email}
+        />
+        <UserLoggedOption
+          title="FAVOURITES"
+          screen="Favourites"
+          icon={<Heart color="#094067" secondColor="#094067" />}
+          logout="true"
+          email={email}
+        />
 
-            <Text style={{ fontFamily: 'Inter_400Regular', color: '#094067' }}>
-              FAVOURITES
-            </Text>
-            <AntDesign name="right" size={24} color="#094067" />
-          </View>
-        </Pressable>
+        <UserLoggedOption
+          title="PAGAMENTO"
+          screen="CreditCardInformation"
+          icon={<Fontisto name="credit-card" size={20} color="#094067" />}
+          logout="true"
+          email={email}
+        />
+
         <Divider
           style={{
             backgroundColor: '#094067',
@@ -92,6 +73,7 @@ const userLogged = ({ payload }) => {
             marginBottom: 10,
           }}
         />
+
         <Pressable
           onPress={() => dispatch(userActions.logout)}
           style={{

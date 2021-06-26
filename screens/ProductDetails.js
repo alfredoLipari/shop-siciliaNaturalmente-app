@@ -1,3 +1,8 @@
+// * Pasta details screen
+// ? what should it do
+// * View the selected product, add it to the cart with arbitrary q.ty
+// * Add it or delete it to favourite list if user is logged
+
 import React, { useState } from 'react'
 import {
   View,
@@ -11,7 +16,7 @@ import {
   Alert,
   Pressable,
 } from 'react-native'
-import { Header, Avatar, Divider } from 'react-native-elements'
+import { Header } from 'react-native-elements'
 import axios from '../axios'
 import { AntDesign } from '@expo/vector-icons'
 import Heart from '../assets/heart'
@@ -21,9 +26,10 @@ import * as userActions from '../store/actions/user'
 import OverlayImage from '../components/overlayImage'
 import globalStyles from '../Style'
 import CustomModal from '../components/CustomModal'
-import LottieView from 'lottie-react-native'
+import PastaDetails from '../components/Pasta/PastaDetails'
+import BoxDetails from '../components/Box/BoxDetails'
 
-const PastaDetails = ({ route, navigation }) => {
+const ProductDetails = ({ route, navigation }) => {
   /* I had to be carefull here */
 
   let selectedProduct = {}
@@ -157,6 +163,11 @@ const PastaDetails = ({ route, navigation }) => {
               style={{ alignSelf: 'flex-end' }}
               onPress={() => addTofavourite(email, selectedProduct.title, 1)}
             >
+              {/*     <LottieView
+                source={require('../assets/lottie/heart.json')}
+                style={{ height: 100, width: 100 }}
+                autoPlay
+              ></LottieView> */}
               <Heart color="#ef4565" secondColor="#ef4565" />
             </Pressable>
           ) : (
@@ -192,67 +203,12 @@ const PastaDetails = ({ route, navigation }) => {
 
           {/*  render conditionally based on the category */}
           {selectedProduct.categoria === 'pasta' ? (
-            <View style={styles.listContainer}>
-              <Text style={{ fontFamily: 'Inter_400Regular' }}>
-                🌾 grano utilizzato:
-                <Text style={{ fontFamily: 'Inter_600SemiBold' }}>
-                  {selectedProduct.grano}
-                </Text>
-              </Text>
-              <Text style={{ fontFamily: 'Inter_400Regular' }}>
-                ⚖️ grammi:{' '}
-                <Text style={{ fontFamily: 'Inter_600SemiBold' }}>
-                  {selectedProduct.grammi}
-                </Text>
-                <Text style={{ fontFamily: 'Inter_400Regular' }}> gm</Text>
-              </Text>
-              <Text style={{ fontFamily: 'Inter_400Regular' }}>
-                ⏲️ tempo cottura:{' '}
-                <Text style={{ fontFamily: 'Inter_600SemiBold' }}>
-                  {selectedProduct.minutiPrep}
-                </Text>{' '}
-                <Text style={{ fontFamily: 'Inter_400Regular' }}>min</Text>
-              </Text>
-            </View>
+            <PastaDetails selectedProduct={selectedProduct} />
           ) : (
-            <View style={{ marginTop: 10 }}>
-              <Text style={styles.text}>{selectedProduct.descrizione}</Text>
-              {/* render the box Layout */}
-              {boxLayout && (
-                <>
-                  <Divider
-                    style={{
-                      backgroundColor: '#3da9fc',
-                      height: 0.5,
-                      marginVertical: 5,
-                    }}
-                  />
-                  <Text style={styles.text}>Cosa contiene: </Text>
-                  <View style={styles.boxLayout}>
-                    {boxLayout.map((product, i) => (
-                      <Pressable
-                        style={{ alignItems: 'center' }}
-                        key={product._id}
-                        onPress={() => {
-                          navigation.navigate('Dettagli', {
-                            itemId: product._id,
-                          })
-                        }}
-                      >
-                        <Avatar
-                          rounded
-                          source={{
-                            uri: `${axios.defaults.baseURL}/${product.image}`,
-                          }}
-                        ></Avatar>
-                        <Text>x {selectedProduct.products[i].qty}</Text>
-                      </Pressable>
-                    ))}
-                  </View>
-                </>
-              )}
-              {/* end box Layout */}
-            </View>
+            <BoxDetails
+              selectedProduct={selectedProduct}
+              boxLayout={boxLayout}
+            />
           )}
         </View>
         <View style={styles.cover}>
@@ -326,11 +282,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginVertical: 10,
   },
-  listContainer: {
-    height: 100,
-    justifyContent: 'space-between',
-    marginTop: 10,
-  },
   cover: {
     width: '100%',
     height: 300,
@@ -375,11 +326,6 @@ const styles = StyleSheet.create({
     height: 30,
     textAlign: 'center',
   },
-  boxLayout: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 4,
-  },
   text: {
     color: '#094067',
     textAlign: 'center',
@@ -387,4 +333,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default PastaDetails
+export default ProductDetails

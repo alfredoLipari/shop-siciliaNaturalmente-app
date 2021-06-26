@@ -10,6 +10,7 @@ const PastaProducts = () => {
   //I want to retrieve only the pasta category
 
   const products = useSelector((state) => state.products.availableProducts)
+  console.log(products, 'qui')
 
   const dispatch = useDispatch()
 

@@ -1,3 +1,7 @@
+// * FAVOURITE SCREEN
+// ? what should it do
+// * View favourite product of the user, click them or delete them
+
 import React from 'react'
 import { View } from 'react-native'
 import globalStyles from '../Style'
@@ -6,7 +10,7 @@ import { AntDesign } from '@expo/vector-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from '../axios'
 import * as UserActions from '../store/actions/user'
-import CreditInformationScreen from './CreditInformationScreen'
+
 const FavouritesScreen = ({ navigation, route }) => {
   const dispatch = useDispatch()
 

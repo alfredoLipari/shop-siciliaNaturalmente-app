@@ -11,6 +11,7 @@ import {
   FINISH_REGISTER,
   UPDATE_PAST_ORDERS,
   UPDATE_FAVOURITE,
+  SAVE_PAYMENT_METHOD,
 } from './types'
 
 import axios from '../../axios'
@@ -146,6 +147,11 @@ export const updateFavourite = (email, title, isDelete) => async (dispatch) => {
   } catch (e) {
     console.log(e, 'in updateFavourite')
   }
+}
+
+//Stripe api, create a paymentMethod and attach to a user
+export const createPaymentMethod = (info) => {
+  return { type: SAVE_PAYMENT_METHOD, payload: info }
 }
 
 const clearLogoutTimer = () => {

@@ -1,3 +1,7 @@
+// * PRODUCTS SCREEN, the first screen to be visualized
+// ? What should it do?
+// * View all available products, filter them and select one
+
 import React, { useState, useCallback, useEffect } from 'react'
 import {
   StyleSheet,
@@ -7,8 +11,6 @@ import {
   Keyboard,
   Pressable,
   ImageBackground,
-  ActivityIndicator,
-  LogBox,
 } from 'react-native'
 import { SearchBar, Header, Button } from 'react-native-elements'
 import { StatusBar } from 'expo-status-bar'
@@ -42,17 +44,7 @@ export const customLeftHeaderComponent = () => {
   )
 }
 
-const miao = async () => {
-  const bao = await axios.post('/stripe/pay')
-  console.log(bao)
-}
-
 const ProductsScreen = ({ navigation }) => {
-  useEffect(() => {
-    LogBox.ignoreLogs(['Animated: `useNativeDriver`'])
-    miao()
-  }, [])
-
   const dispatch = useDispatch()
   const [search, setSearch] = useState('')
 

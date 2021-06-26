@@ -1,4 +1,7 @@
-import React from 'react'
+// * THE ENTRY POINT OF THE APP
+// * here redux, Stripe and navigation logic are initialized
+
+import React, { useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import {
   useFonts,
@@ -9,6 +12,7 @@ import {
 import AppLoading from 'expo-app-loading'
 import { StripeProvider } from '@stripe/stripe-react-native'
 //pass the ref to your navigation container
+import stripe from 'tipsi-stripe'
 
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './store'
@@ -16,6 +20,8 @@ import { store, persistor } from './store'
 import { Provider } from 'react-redux'
 
 import { AppTab } from './Navigation'
+
+const publishableKey = 'pk_test_dnoZ1HQ1qfNN5LLLHhItScMc'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -32,7 +38,9 @@ export default function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
-          <AppTab />
+          <StripeProvider publishableKey={publishableKey}>
+            <AppTab />
+          </StripeProvider>
         </NavigationContainer>
       </PersistGate>
     </Provider>

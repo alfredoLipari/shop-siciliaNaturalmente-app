@@ -177,6 +177,7 @@ const Login = () => {
               inputStyle={{ color: '#172c66', marginLeft: 5 }}
               placeholderTextColor="#172c66"
               secureTextEntry
+              keyboardType="visible-password"
             />
 
             {/* END INPUT PASSWORD */}

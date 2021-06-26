@@ -12,8 +12,6 @@ const Box = () => {
     ),
   )
 
-  console.log(products)
-
   const renderBox = ({ item }) => {
     return (
       <OneBox

@@ -9,11 +9,11 @@ import ProductScreen from './screens/ProductsScreen'
 import CartScreen from './screens/CartScreen'
 import UserScreen from './screens/UserScreen'
 import DoveSiamoScreen from './screens/WhereWeAreScreen'
-import PastaDetails from './screens/PastaDetails'
+import ProductDetails from './screens/ProductDetails'
 import OrderHistoryScreen from './screens/OrdersHistoryScreen'
 import OrderHistoryDetails from './components/pastOrderComponet/pastOrderDetail'
 import FavouritesScreen from './screens/FavouritesScreen'
-
+import CreditCardInformation from './screens/CreditInformationScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const Stack = createStackNavigator()
@@ -96,6 +96,13 @@ const UserStack = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="CreditCardInformation"
+        component={CreditCardInformation}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   )
 }
@@ -112,7 +119,7 @@ const AppStack = () => {
       />
       <Stack.Screen
         name="Dettagli"
-        component={PastaDetails}
+        component={ProductDetails}
         options={{
           headerShown: false,
         }}

@@ -1,13 +1,9 @@
+// * ORDER HISTORY SCREEN
+// ? what should it do
+// * View all past orders, click on them to see their information
+
 import React from 'react'
-import {
-  View,
-  Text,
-  FlatList,
-  ActivityIndicator,
-  StyleSheet,
-  Pressable,
-  ScrollView,
-} from 'react-native'
+import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native'
 import { Header } from 'react-native-elements'
 import { AntDesign } from '@expo/vector-icons'
 import { useSelector } from 'react-redux'
