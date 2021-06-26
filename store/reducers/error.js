@@ -15,7 +15,6 @@ export default function (state = initialState, action) {
         id: action.payload.id,
       }
     case CLEAR_ERRORS:
-      console.log('Miao')
       return {
         msg: {},
         status: null,

@@ -21,7 +21,7 @@ import { Header, Text, Button } from 'react-native-elements'
 import globalStyle, { colors } from '../Style'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-export default function PaymentsUICompleteScreen({ route }) {
+export default function PaymentsUICompleteScreen({ navigation, route }) {
   const email = route.params.email.email
 
   const creditCardInformation = useSelector(
@@ -30,7 +30,6 @@ export default function PaymentsUICompleteScreen({ route }) {
   console.log(creditCardInformation, ' ecooooo')
 
   useEffect(() => {
-    console.log('miao')
     async function retrievePaymentInfo() {
       const response = await axios.post('/stripe/paymentMethod', {
         creditCardInformation,

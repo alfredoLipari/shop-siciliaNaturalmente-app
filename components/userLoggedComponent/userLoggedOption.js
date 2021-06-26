@@ -7,7 +7,6 @@ import { useNavigation } from '@react-navigation/native'
 //fi fi-credit-card
 const userLoggedOption = ({ title, screen, icon, logout, email }) => {
   const navigation = useNavigation()
-  console.log(email, 'qui')
 
   const [selectedIcon] = useState(icon)
 

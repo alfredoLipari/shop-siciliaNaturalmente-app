@@ -182,6 +182,7 @@ const ProductDetails = ({ route, navigation }) => {
             visible={isVisible}
             setIsVisible={() => setIsVisible(!isVisible)}
             images={[selectedProduct.image, selectedProduct.imageBack]}
+            useNativeDriver={false}
           />
           <Pressable
             onPress={() => setIsVisible(true)}

@@ -4,10 +4,12 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import PastaIcon from '../assets/photo/PastaIcon'
 import PastaIconOutline from '../assets/photo/PastaIconOutline'
 import BoxOutline from '../assets/photo/boxOutline'
+import OtherProducts from '../assets/photo/OtherProducts'
 
 import { Pressable } from 'react-native'
 
 const Category = (props) => {
+  console.log(props.image)
   return (
     <Pressable onPress={() => props.onSelect(props.title)}>
       <View
@@ -18,11 +20,13 @@ const Category = (props) => {
       >
         {(() => {
           switch (props.image) {
-            case 1:
-              return <PastaIcon />
             case 4:
+              return <PastaIcon />
+            case 1:
               return <PastaIconOutline />
-            case 3:
+            case 5:
+              return <OtherProducts />
+            case 6:
               return <BoxOutline />
             default:
               return (

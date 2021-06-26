@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, Keyboard, ActivityIndicator } from 'react-native'
 import { Formik } from 'formik'
 import { Input, Button } from 'react-native-elements'
-import * as userActions from '../store/actions/user'
 import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
 
 const Login = ({ onSubmit }) => {
   const handleSubmit = async (values) => {
-    console.log('Lol')
-
     onSubmit()
   }
 

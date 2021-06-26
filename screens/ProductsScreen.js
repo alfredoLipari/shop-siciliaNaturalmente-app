@@ -20,7 +20,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Pasta from '../components/Pasta/pasta'
 import OtherProducts from '../components/OtherProducts/OtherProducts'
 import Box from '../components/Box/Box'
-import axios from '../axios'
 
 import Category from '../components/category'
 import * as PastaProdcuctActions from '../store/actions/products'
@@ -138,11 +137,7 @@ const ProductsScreen = ({ navigation }) => {
       <View style={styles.categories}>
         <View style={styles.category}>
           <Category
-            image={
-              images.category[
-                selectedCategoryPasta === true ? 'pastaOffset' : 'pasta'
-              ]
-            }
+            image={selectedCategoryPasta === true ? 4 : 1}
             title="pasta"
             onSelect={selectedCategory}
             color={selectedCategoryPasta}
@@ -161,13 +156,7 @@ const ProductsScreen = ({ navigation }) => {
         </View>
         <View style={styles.category}>
           <Category
-            image={
-              images.category[
-                selectedCategoryProducts === true
-                  ? 'prodottiOffset'
-                  : 'prodotti'
-              ]
-            }
+            image={selectedCategoryProducts === true ? 5 : 2}
             onSelect={selectedCategory}
             title="prodotti"
             color={selectedCategoryProducts}
@@ -189,11 +178,7 @@ const ProductsScreen = ({ navigation }) => {
 
         <View style={styles.category}>
           <Category
-            image={
-              images.category[
-                selectedCategoryBox === true ? 'scatolaOffset' : 'scatola'
-              ]
-            }
+            image={selectedCategoryBox === true ? 6 : 3}
             title="box"
             onSelect={selectedCategory}
             color={selectedCategoryBox}

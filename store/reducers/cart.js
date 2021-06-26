@@ -55,7 +55,6 @@ export default (state = initialState, action) => {
           prodTitle,
           prodImage,
         )
-        console.log(updatedOrNewCartItem, 'qui')
       }
 
       return {

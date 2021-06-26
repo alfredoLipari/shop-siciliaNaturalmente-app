@@ -4,7 +4,6 @@ import axios from '../../axios'
 import { images } from '../../data/dummy-data'
 
 const OneBox = (props) => {
-  console.log(props)
   return (
     <View style={styles.screen}>
       <TouchableOpacity onPress={props.onSelect}>

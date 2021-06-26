@@ -40,7 +40,6 @@ export const auth = () => async (dispatch) => {
 
 export const register = (values, isLogin) => {
   return async (dispatch, payload) => {
-    console.log('NI STO LOOGGADO')
     dispatch({ type: USER_LOADING })
     const { name, ...dataLogin } = values
 

@@ -13,7 +13,6 @@ import {
 import axios from '../../axios'
 import { auth } from './user'
 export const addToCart = (product, quantity) => async (dispatch) => {
-  console.log(product, ' ma che cazzp ')
   return dispatch({
     type: ADD_TO_CART,
     product: product,

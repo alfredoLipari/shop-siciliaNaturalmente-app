@@ -1,14 +1,16 @@
 {
-    "expo": {
-    
-      "plugins": [
-        [
-          "@stripe/stripe-react-native",
-          {
-           
-            "enableGooglePay": true
-          }
-        ]
+  "expo": {
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          "enableGooglePay": true
+        }
       ]
-    }
+    ],
+    "name": "Sicilia-naturalmente-app",
+    "description": "l'ufficiale applicazione di Sicilia Naturalmente ",
+    "slug": "sicilia-naturalmente-app",
+    "githubUrl": "https://github.com/alfredoLipari/shop-siciliaNaturalmente-app.git"
   }
+}
