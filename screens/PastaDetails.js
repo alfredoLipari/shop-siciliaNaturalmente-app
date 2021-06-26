@@ -21,6 +21,7 @@ import * as userActions from '../store/actions/user'
 import OverlayImage from '../components/overlayImage'
 import globalStyles from '../Style'
 import CustomModal from '../components/CustomModal'
+import LottieView from 'lottie-react-native'
 
 const PastaDetails = ({ route, navigation }) => {
   /* I had to be carefull here */
@@ -60,8 +61,7 @@ const PastaDetails = ({ route, navigation }) => {
 
   if (products && isAuth) {
     /* logic for the favourite */
-
-    // search if this products is user favourite
+    // search if this product is user's favourite
     isFavourite =
       favourites.filter((product) => product === selectedProduct.title).length >
       0
