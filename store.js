@@ -4,7 +4,7 @@ import cartReducer from './store/reducers/cart'
 import userReducer from './store/reducers/user'
 import errorReducer from './store/reducers/error'
 import ReduxThunk from 'redux-thunk'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { persistReducer, persistStore } from 'redux-persist'
 
 const persistConfig = {

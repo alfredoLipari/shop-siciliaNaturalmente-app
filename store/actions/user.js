@@ -15,7 +15,7 @@ import {
 } from './types'
 
 import axios from '../../axios'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const auth = () => async (dispatch) => {
   //dispatch(setLogoutTimer(expiryTime))
