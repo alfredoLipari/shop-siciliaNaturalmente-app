@@ -9,7 +9,6 @@ import OtherProducts from '../assets/photo/OtherProducts'
 import { Pressable } from 'react-native'
 
 const Category = (props) => {
-  console.log(props.image)
   return (
     <Pressable onPress={() => props.onSelect(props.title)}>
       <View

@@ -1,0 +1,15 @@
+Professore di seguito le allego il link alla documentazione (redirect per notion):
+
+https://www.notion.so/07743bcc2677467f8158a6bfd19c2dfe?v=47d3be944dc04254a744e563eff35bfc
+
+------------------------------------------------------------------------------------
+Questa invece è la demo, spero sia conforme con quanto richiesto, poichè è un post su linkedin
+che fa vedere le maggiori feature dell'applicazione anche se adesso è cambiata di molto:
+
+https://www.linkedin.com/posts/alfredo-lipari-403573188_sicilianaturlamente-mern-activity-6802186989954187264-3PpS
+
+---------------------------
+questa invece è la pagina al progetto hostata da expo
+https://expo.io/@alfredo18/shop-app
+per scannerizzare il qr-code (perfavore solo android!) scaricare dalla playstore l'app expo-go
+comunque non è detto che l'app funzioni poichè il backend è comunque in locale, cosa che sicuramente modificherò

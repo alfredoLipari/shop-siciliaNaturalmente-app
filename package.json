@@ -7,7 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "debug": "start 'rndebugger://set-debugger-loc?host=localhost&port=19001'",
-    "test": "node_modules/.bin/jest",
+    "test": "jest",
     "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
   },
   "dependencies": {
