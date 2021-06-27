@@ -9,6 +9,7 @@ const mockStore = configureStore([])
 
 /* MOCK redux is for testing ACTIONS not REDUCERS and so does not return no update state */
 
+//mock the cart store
 const cartStore = mockStore({
   cart: {
     items: {
