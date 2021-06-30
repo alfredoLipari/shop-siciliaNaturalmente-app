@@ -58,7 +58,7 @@ app.use('/upload', express.static(path.join('upload')))
 
 //Connect to DB
 mongoose.connect(
-  process.env.DB_CONNECTION,
+  'mongodb+srv://wiidialga18:wiidialga18@cluster0.08rar.mongodb.net/SiciliaNaturalmente?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -68,4 +68,4 @@ mongoose.connect(
 )
 
 //listen at port 8000
-app.listen(8000)
+app.listen(process.env.PORT || 8000)
