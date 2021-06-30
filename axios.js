@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://2f568d9023cd.ngrok.io',
+  baseURL: 'https://sicilia-app-backend.herokuapp.com/',
 })
 
 export default instance
