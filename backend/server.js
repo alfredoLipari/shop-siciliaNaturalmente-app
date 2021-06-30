@@ -58,7 +58,7 @@ app.use('/upload', express.static(path.join('upload')))
 
 //Connect to DB
 mongoose.connect(
-  'mongodb+srv://wiidialga18:wiidialga18@cluster0.08rar.mongodb.net/SiciliaNaturalmente?retryWrites=true&w=majority',
+  process.env.DB_CONNECTION,
   {
     useNewUrlParser: true,
     useCreateIndex: true,
