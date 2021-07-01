@@ -10,6 +10,6 @@ https://www.linkedin.com/posts/alfredo-lipari-403573188_sicilianaturlamente-mern
 
 ---------------------------
 questa invece è la pagina al progetto hostata da expo
-https://expo.io/@alfredo18/shop-app
+https://expo.io/@alfredo18/Siclia-Naturalmente
 per scannerizzare il qr-code (perfavore solo android!) scaricare dalla playstore l'app expo-go
 comunque non è detto che l'app funzioni poichè il backend è comunque in locale, cosa che sicuramente modificherò
